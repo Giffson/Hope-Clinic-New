@@ -1051,6 +1051,9 @@ section{
 .about .mini-title::after{
     top:2rem;
 }
+.about .description,.review .description{
+text-align: justify;
+}
 .about .row{
   margin: 0 -15px !important;
 }
