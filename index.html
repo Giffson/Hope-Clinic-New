@@ -613,6 +613,15 @@ var currentScrollPos = window.pageYOffset;
   prevScrollpos = currentScrollPos;
 }
 
+// scroll stop
+$('#navbarBtn').click(function() {
+  if ($('.navbar-toggler').hasClass('collapsed')) {
+    document.body.style.overflow = 'scroll';
+  } else {
+    document.body.style.overflow = 'hidden';
+  }
+});
+
 
 
 // method 2
