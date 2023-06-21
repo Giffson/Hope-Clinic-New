@@ -37,8 +37,8 @@
   <main>
     <nav class="navbar navbar-expand-lg top-0 start-0 position-absolut z-3 w-100" id="navbar">
       <div class="container">
-          <a href="/Hope-Clinic-New/index.html" class="navbar-brand"><img class="img-fluid" src="./images/logo.png" alt="logo"></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <a href="/index.html" class="navbar-brand"><img class="img-fluid" src="./images/logo.png" alt="logo"></a>
+          <button id="navbarBtn" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
@@ -149,10 +149,10 @@
           <div class="col-lg-3 col-md-6 footer-links">
             <h4>Our Services</h4>
             <ul>
-              <li><i class="fa fa-chevron-right"></i> <a href="#contact">Radio Diagnosis</a></li>
-              <li><i class="fa fa-chevron-right"></i> <a href="#contact">Orthopedic</a></li>
-              <li><i class="fa fa-chevron-right"></i> <a href="#contact">Cardio & Diabetologists</a></li>
-              <li><i class="fa fa-chevron-right"></i> <a href="#contact">Radio Diagnosis</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a href="/index.html#contact">Radio Diagnosis</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a href="/index.html#contact">Orthopedic</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a href="/index.html#contact">Cardio & Diabetologists</a></li>
+              <li><i class="fa fa-chevron-right"></i> <a href="/index.html#contact">Radio Diagnosis</a></li>
             </ul>
           </div>
   
@@ -212,6 +212,7 @@
        <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
 
+      
        <script>
         $('.review-slide-container').slick({
           dots:true,
@@ -225,11 +226,13 @@
     // debugger;
   if( $('.navbar-collapse').hasClass('show')){
     $('.navbar-collapse').removeClass('show');
-    $('.navbar').addClass('hide');
-   }
-});
 
-// navbar scroll effects
+    $('.navbar').addClass('hide');
+    $('.navbar-toggler').addClass('collapsed');
+    document.body.style.overflow = 'scroll';
+   }
+
+});
 
 
 // scroll stop
@@ -240,6 +243,10 @@ $('#navbarBtn').click(function() {
     document.body.style.overflow = 'hidden';
   }
 });
+
+
+
+// navbar scroll effects
 
 // method 1
 
@@ -257,7 +264,6 @@ var currentScrollPos = window.pageYOffset;
   }
   prevScrollpos = currentScrollPos;
 }
-
 
 
 // method 2
